@@ -16,7 +16,7 @@ import { Station, StationsDatabase } from "./StationsDatabase";
 
 const centralSystemSimple = new OcppServer();
 centralSystemSimple.listen(9220);
-console.log(`Server started, listening on port 9220...`);
+console.log(`Server started, listening on port 9220...`, new Date().toISOString());
 
 const stations = new StationsDatabase();
 
@@ -34,7 +34,7 @@ centralSystemSimple.on("connection", (client: OcppClientConnection) => {
 
   client.on("close", (code: number, reason: Buffer) => {
     stations.removeStation(id);
-    console.log(`Client ${id} closed connection`, code, reason.toString());
+    console.log(`Client ${id} closed connection`, code, reason.toString(), new Date().toISOString());
   });
 
   client.on(
