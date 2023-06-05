@@ -25,7 +25,7 @@ centralSystemSimple.on("connection", (client: OcppClientConnection) => {
   const id = client.getCpId();
 
   const newStation: Station = {
-    id,
+    id, 
     client,
     meterValues: [],
   };
@@ -138,7 +138,7 @@ app.get("/stations", (req, res) => {
   res.send(strippedStations);
 });
 
-app.get("/reboot/:id", (req, res) => {
+app.post("/reboot/:id", (req, res) => {
   const id = req.params.id;
   console.log(`webserver: incoming request: /reboot/${id}`);
 
