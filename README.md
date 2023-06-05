@@ -15,19 +15,19 @@ POC of backoffice for charging stations using OCPP.
 
 Following endpoints are available:
 
-### GET /
+### `GET /`
 
 Check if this API server is up
 
-### GET /stations
+### `GET /stations`
 
 List registered stations
 
-### POST /reboot/<stationId>
+### `POST /reboot/<stationId>`
 
 Reboot command to station. Note: id is the configured stations name. Not suitable as real id.
 
-### GET /station/<stationId>/config/<configKey>
+### `GET /station/<stationId>/config/<configKey>`
 
 Fetch value of some configuration key.
 
