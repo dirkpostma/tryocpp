@@ -23,11 +23,37 @@ Check if this API server is up
 
 List registered stations
 
-### `POST /reboot/<stationId>`
+#### Example
+
+```JSON
+[
+    {
+        "id": "DIRK-2403",
+        "meterValues": [],
+        "bootNotification": {
+            "chargePointVendor": "Alfen BV",
+            "chargePointModel": "EVe-dual",
+            "chargePointSerialNumber": "ace0240377",
+            "chargeBoxSerialNumber": "DIRK-2403",
+            "firmwareVersion": "5.8.1-4123"
+        },
+        "statusNotification": {
+            "connectorId": 0,
+            "errorCode": "OtherError",
+            "info": "Modbus TCP/IP lost, in safe mode max 22.0A",
+            "status": "Faulted",
+            "timestamp": "2023-04-17T11:22:25Z",
+            "vendorErrorCode": "210"
+        }
+    }
+]
+```
+
+### `POST /reboot/:id`
 
 Reboot command to station. Note: id is the configured stations name. Not suitable as real id.
 
-### `GET /station/<stationId>/config/<configKey>`
+### `GET /station/:id/config/:configurationKey`
 
 Fetch value of some configuration key.
 
@@ -35,7 +61,7 @@ Fetch value of some configuration key.
 
 Request:
 
-`GET http://localhost:3000/station/DIRK-1001/config/DeviceIdentifier`
+`GET http://localhost:3000/station/DIRK-2403/config/DeviceIdentifier`
 
 Response:
 ```JSON
