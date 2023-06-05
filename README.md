@@ -2,13 +2,14 @@
 
 POC of backoffice for charging stations using OCPP.
 
-## Setup charging station
+## Getting started
 
-- `yarn ts-node ./src/server.ts`
+- run `yarn ts-node ./src/server.ts`
+
+  An OCPP listener (websocket) is started on port 9220.
+  A webserver with API is started on port 3000.
+
 - configure charging station backoffice URL to: `https://<ip of development system>:9220/`
-
-An OCPP listener (websocket) is started on port 9220.
-A webserver with API is started on port 3000.
 
 ## API
 
