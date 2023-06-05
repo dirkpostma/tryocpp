@@ -13,7 +13,7 @@ POC of backoffice for charging stations using OCPP.
 
 ## API
 
-Following endpoints are available:
+Following endpoints are available on `http://localhost:/3000`:
 
 ### `GET /`
 
@@ -31,4 +31,21 @@ Reboot command to station. Note: id is the configured stations name. Not suitabl
 
 Fetch value of some configuration key.
 
-Example: `GET http://localhost:3000/station/DIRK-1001/config/DeviceIdentifier`
+#### Example
+
+Request:
+
+`GET http://localhost:3000/station/DIRK-1001/config/DeviceIdentifier`
+
+Response:
+```JSON
+{
+    "configurationKey": [
+        {
+            "key": "DeviceIdentifier",
+            "readonly": true,
+            "value": "000c00203539470f37353131"
+        }
+    ]
+}
+```
