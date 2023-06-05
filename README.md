@@ -2,24 +2,32 @@
 
 POC of backoffice for charging stations using OCPP.
 
-## Setup charging station 
+## Setup charging station
 
 - `yarn ts-node ./src/server.ts`
 - configure charging station backoffice URL to: `https://<ip of development system>:9220/`
 
+An OCPP listener (websocket) is started on port 9220.
+A webserver with API is started on port 3000.
+
 ## API
 
-A webserver is started on port 3000. Following endpoints are available:
+Following endpoints are available:
 
-`GET /`
+### GET /
+
 Check if this API server is up
 
-`GET /stations`
+### GET /stations
+
 List registered stations
 
-`POST /reboot/<stationId>`
+### POST /reboot/<stationId>
+
 Reboot command to station. Note: id is the configured stations name. Not suitable as real id.
 
-`GET /station/<stationId>/config/<configKey>`
+### GET /station/<stationId>/config/<configKey>
+
 Fetch value of some configuration key.
+
 Example: `GET http://localhost:3000/station/DIRK-1001/config/DeviceIdentifier`
